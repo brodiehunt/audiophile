@@ -1,0 +1,84 @@
+.header {
+  background-color: #191919;
+  padding: 2.3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.headerButton {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.headerButton:focus {
+  outline-color: var(--primary);
+}
+
+.svg {
+  width: 1.4375rem;
+  height: 1.25rem;
+  color: var(--text-light);
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 2.12rem 2.5rem;
+    justify-content: start;
+    gap: 2.6rem;
+  }
+
+  .cartButton {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  .hamburgerButton {
+    display: none;
+  }
+
+  .cartButton {
+    justify-self: right;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .linkList {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .link {
+    color: var(--text-light);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.5625rem; /* 192.308% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.2s ease-in all;
+  }
+
+  .link:hover {
+    color: var(--primary);
+  }
+
+  .link:focus {
+    outline-color: var(--primary);
+  }
+}

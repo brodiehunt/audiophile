@@ -1,0 +1,13 @@
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: calc(100vh - 100%);
+  width: 100%;
+}
+
+.categoryCardContainer {
+  background-color: white;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}

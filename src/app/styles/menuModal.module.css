@@ -5,6 +5,7 @@
   left: 0;
   height: calc(100vh - 100%);
   width: 100%;
+  z-index: 3;
 }
 
 .categoryCardContainer {

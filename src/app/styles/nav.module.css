@@ -1,10 +1,15 @@
-.header {
+.container {
   background-color: #191919;
+}
+
+.header {
   padding: 2.3rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.104);
+  z-index: 1;
 }
 
 .headerButton {
@@ -43,6 +48,7 @@
   .header {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    max-width: 1110px;
   }
 
   .hamburgerButton {
@@ -80,5 +86,13 @@
 
   .link:focus {
     outline-color: var(--primary);
+  }
+}
+
+@media (min-width: 1150px) {
+  .header {
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

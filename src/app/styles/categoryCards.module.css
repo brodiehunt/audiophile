@@ -18,5 +18,7 @@
 @media (min-width: 1024px) {
   .secondaryNav {
     grid-gap: 1.9rem;
+    max-width: 1110px;
+    margin: 5.5rem auto;
   }
 }

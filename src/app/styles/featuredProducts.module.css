@@ -1,0 +1,234 @@
+.featuredProducts {
+  padding: 1.5rem;
+}
+
+/* First card */
+.cardOne {
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  padding: 3.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.cardOneImg {
+  display: block;
+  width: 10.7rem;
+  margin: 0 auto;
+}
+
+.circlesPattern {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  left: 50%;
+  top: -7.3rem;
+  transform: translate(-50%);
+  pointer-events: none;
+}
+
+.cardOneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.cardOneTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem; /* 111.111% */
+  letter-spacing: 0.08038rem;
+  text-transform: uppercase;
+}
+
+.cardOneDescription {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.75;
+  max-width: 21rem;
+}
+
+/* Second Card */
+
+.cardTwo {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.cardTwoImg {
+  width: 100%;
+}
+
+.cardTwoContent {
+  position: absolute;
+  top: 6.31rem;
+  left: 1.5rem;
+  z-index: 2;
+}
+
+.cardTwoTitle {
+  color: var(--text-dark);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Card three */
+
+.cardThree {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cardThreeImg {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.cardThreeContent {
+  border-radius: 0.5rem;
+  background-color: var(--bg-light);
+  padding: 2.56rem 1.5rem;
+}
+
+.cardThreeTitle {
+  color: var(--text-dark);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 500px) {
+  .cardTwoContent {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .featuredProducts {
+    padding: 2.5rem;
+  }
+
+  .cardOne {
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .circlesPattern {
+    width: 59rem;
+    height: 59rem;
+    top: unset;
+    bottom: 4rem;
+  }
+
+  .cardOneContent {
+    margin-top: 4rem;
+    gap: 0;
+  }
+
+  .cardOneTitle {
+    font-size: 3.5rem;
+    line-height: 3.625rem; /* 103.571% */
+    letter-spacing: 0.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cardOneDescription {
+    margin-bottom: 2.5rem;
+  }
+
+  /* CARD TWO */
+
+  .cardTwo {
+    margin-bottom: 2rem;
+  }
+  .cardTwoContent {
+    left: 3.9rem;
+  }
+
+  /* CARD THREE */
+  .cardThree {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .cardThreeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuredProducts {
+    padding: 0 2.5rem;
+    margin: 0 auto;
+    max-width: 1110px;
+  }
+
+  .cardOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 6rem 6rem 0 6rem;
+    margin-bottom: 3rem;
+  }
+
+  .cardOneImgContainer {
+    position: relative;
+  }
+
+  .cardOneImg {
+    width: 25rem;
+    position: relative;
+    top: 1rem;
+  }
+
+  .circlesPattern {
+    top: -6rem;
+  }
+
+  .cardOneContent {
+    text-align: left;
+    align-items: start;
+    margin-left: 8rem;
+  }
+
+  /* CARD TWO */
+
+  .cardTwo {
+    margin-bottom: 3rem;
+  }
+  .cardTwoContent {
+    left: 6rem;
+  }
+
+  /* Card Three */
+
+  .cardThreeContent {
+    padding-left: 5.9rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  .featuredProducts {
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,172 @@
+.footer {
+  background-color: var(--bg-dark);
+  margin-top: 7.5rem;
+}
+
+.footerContentWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.logoContainer::before {
+  position: absolute;
+  content: "";
+  width: 6.3rem;
+  height: 0.25rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+}
+
+.footerNav {
+  display: flex;
+  justify-content: center;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--text-light);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5625rem; /* 192.308% */
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s ease-in all;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.link:focus {
+  outline-color: var(--primary);
+}
+
+.footerContent {
+  color: var(--text-light);
+  text-align: center;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
+.companyDescription {
+  margin-bottom: 3rem;
+}
+
+.copyright {
+  margin-bottom: 3rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.socialLink {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: 0.2s ease-in all;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+}
+
+.socialLink:focus {
+  outline-color: var(--primary);
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 768px) {
+  .footerContentWrapper {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .logoContainer::before {
+    left: 2.5rem;
+    transform: unset;
+  }
+  .linkList {
+    flex-direction: row;
+    gap: 2.12rem;
+  }
+
+  .footerContent {
+    text-align: left;
+  }
+
+  .copyright {
+    margin-bottom: 0;
+  }
+
+  .socialLinks {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerContentWrapper {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footerContent {
+    max-width: 33rem;
+  }
+
+  .socialLinks {
+    top: 12.5rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  .footerContentWrapper {
+    padding: 3.5rem 0;
+  }
+
+  .logoContainer::before {
+    left: 0;
+  }
+
+  .socialLinks {
+    right: 0;
+  }
+}

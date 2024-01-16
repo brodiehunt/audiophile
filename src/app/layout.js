@@ -1,6 +1,7 @@
 import "./globals.css";
 import Nav from "@/app/ui/nav";
 import MenuModal from "./ui/menuModal";
+import Footer from "./ui/footer";
 import { manrope } from "./ui/fonts";
 
 export const metadata = {
@@ -17,6 +18,8 @@ export default function RootLayout({ children }) {
         </Nav>
 
         {children}
+
+        <Footer />
       </body>
     </html>
   );

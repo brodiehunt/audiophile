@@ -1,7 +1,9 @@
+import CategoryCardSkeleton from "@/app/ui/category/categoryCardSkeleton";
+
 export default function Loading() {
   return (
-    <div>
-      <div>This is a loading page</div>
-    </div>
+    <>
+      <CategoryCardSkeleton />
+    </>
   );
 }

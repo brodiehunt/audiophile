@@ -139,6 +139,7 @@
 
   .imgContainer {
     max-height: unset;
+    margin: 0;
   }
   .contentContainer {
     align-self: center;

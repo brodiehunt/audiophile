@@ -1,5 +1,6 @@
 import { fetchProductById } from "@/app/lib/data";
 import ProductMain from "./productMain";
+import ProductFeatures from "./productFeatures";
 
 export default async function Product({ productId }) {
   console.log("Product", productId);
@@ -9,6 +10,7 @@ export default async function Product({ productId }) {
   return (
     <section>
       <ProductMain product={product} />
+      <ProductFeatures product={product} />
     </section>
   );
 }

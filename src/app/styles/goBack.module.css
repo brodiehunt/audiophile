@@ -1,0 +1,46 @@
+.goBackContainer {
+  padding: 1rem 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.goBackLink {
+  color: var(--text-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: 0.2s ease-in all;
+}
+
+.goBackLink:hover {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.goBackLink:focus {
+  outline-color: var(--primary);
+  color: var(--primary);
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .goBackContainer {
+    padding: 1.5rem 2.5rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .goBackContainer {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1150px) {
+  .goBackContainer {
+    padding: 4.5rem 0;
+    padding-bottom: 3.5rem;
+  }
+}

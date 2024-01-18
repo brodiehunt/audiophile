@@ -1,4 +1,5 @@
 .productMainContainer {
+  margin-bottom: 5.5rem;
 }
 
 .productImgContainer {
@@ -81,10 +82,71 @@
   letter-spacing: 0.0625rem;
 }
 
+/* FEATURES SECTION */
+.featuresContainer {
+  margin-bottom: 7.5rem;
+}
+
+.features {
+  margin-bottom: 5.5rem;
+}
+
+.featuresTitle {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.25rem; /* 150% */
+  letter-spacing: 0.05356rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.featureParagraph {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
+.featureParagraph:nth-child(2) {
+  margin-bottom: 1.5rem;
+}
+
+.inTheBoxTitle {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.25rem; /* 150% */
+  letter-spacing: 0.05356rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.item {
+  display: flex;
+  gap: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.itemQuantity {
+  color: var(--primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+}
+
+.itemName {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
 @media (min-width: 768px) {
   .productMainContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 7.5rem;
   }
 
   .productImgContainer {
@@ -108,11 +170,41 @@
   .productDescription {
     margin-bottom: 2rem;
   }
+
+  /* Features Section  */
+
+  .features {
+    margin-bottom: 7.5rem;
+  }
+
+  .featuresTitle {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.07144rem;
+    margin-bottom: 2rem;
+  }
+
+  .featureParagraph:nth-child(2) {
+    margin-bottom: 1.5rem;
+  }
+
+  .inTheBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inTheBoxTitle {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.07144rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .productMainContainer {
     gap: 1.25rem;
+    margin-bottom: 9.5rem;
   }
 
   .productImgContainer {
@@ -125,5 +217,20 @@
 
   .productDescription {
     margin-bottom: 3rem;
+  }
+
+  /* FEATURES SECTION */
+  .featuresContainer {
+    margin-bottom: 9.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 7.5rem;
+  }
+
+  .features {
+    margin-bottom: 0;
+  }
+  .inTheBox {
+    display: block;
   }
 }

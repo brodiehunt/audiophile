@@ -2,7 +2,7 @@ import styles from "@/app/styles/product/product.module.css";
 import ProductButtons from "./productButtons";
 import { formatName } from "@/app/lib/formatName";
 import { formatPrice } from "@/app/lib/formatPrice";
-export default function ProductMain({ product }) {
+export default async function ProductMain({ product }) {
   return (
     <div className={styles.productMainContainer}>
       <div className={styles.productImgContainer}>

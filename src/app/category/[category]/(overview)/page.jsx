@@ -3,6 +3,14 @@ import { notFound } from "next/navigation";
 import styles from "@/app/styles/category/categoryCards.module.css";
 import CategoryCard from "@/app/ui/category/categoryCard";
 
+export function generateStaticParams() {
+  return [
+    { category: "headphones" },
+    { category: "speakers" },
+    { category: "earphones" },
+  ];
+}
+
 export default async function Page({ params: { category } }) {
   console.log("category is:", category);
   const data = await fetchProductsByCategory(category);
@@ -11,7 +19,7 @@ export default async function Page({ params: { category } }) {
   if (products.length === 0) {
     notFound();
   }
-  console.log(products);
+
   return (
     <>
       <header className={styles.header}>

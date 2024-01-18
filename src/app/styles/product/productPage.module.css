@@ -1,0 +1,22 @@
+.productPageContainer {
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .productPageContainer {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .productPageContainer {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1150px) {
+  .productPageContainer {
+    padding: 0;
+  }
+}

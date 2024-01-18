@@ -9,6 +9,8 @@
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   transition: 0.2s ease-in all;
+  border: none;
+  cursor: pointer;
 }
 
 .primary:hover {

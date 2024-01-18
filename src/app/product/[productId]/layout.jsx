@@ -1,8 +1,11 @@
+import CategoryCards from "@/app/ui/categoryCards";
+import CompanyInfo from "@/app/ui/companyInfo";
 export default function Layout({ children }) {
   return (
     <main>
       <div>{children}</div>
-      <div>This static stuff</div>
+      <CategoryCards />
+      <CompanyInfo />
     </main>
   );
 }

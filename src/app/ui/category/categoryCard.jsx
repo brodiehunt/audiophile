@@ -1,16 +1,17 @@
 import styles from "@/app/styles/category/categoryCards.module.css";
 import ButtonLink from "../buttonLink";
-export default function CategoryCard({ product }) {
-  const formatName = (name) => {
-    const nameSplit = name.split(" ");
-    const lastWord = nameSplit.pop();
-    const firstLine = nameSplit.join(" ");
-    return (
-      <>
-        {firstLine} <br /> {lastWord}
-      </>
-    );
-  };
+import { formatName } from "@/app/lib/formatName";
+export default async function CategoryCard({ product }) {
+  // const formatName = (name) => {
+  //   const nameSplit = name.split(" ");
+  //   const lastWord = nameSplit.pop();
+  //   const firstLine = nameSplit.join(" ");
+  //   return (
+  //     <>
+  //       {firstLine} <br /> {lastWord}
+  //     </>
+  //   );
+  // };
 
   return (
     <article className={styles.productCard}>

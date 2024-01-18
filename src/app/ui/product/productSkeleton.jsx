@@ -73,6 +73,17 @@ export default function ProductSkeleton() {
           </ul>
         </div>
       </div>
+      <div className={styles.galleryContainer}>
+        <div
+          className={`${styles.gridOne} ${styles.gridImage} ${styles.shimmer}`}
+        ></div>
+        <div
+          className={`${styles.gridTwo} ${styles.gridImage} ${styles.shimmer}`}
+        ></div>
+        <div
+          className={`${styles.gridThree} ${styles.gridImage} ${styles.shimmer}`}
+        ></div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--bg-dark);
-  margin-top: 7.5rem;
+  /* margin-top: 7.5rem; */
 }
 
 .footerContentWrapper {
@@ -82,6 +82,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  /* align-items: center; */
 }
 
 .socialLink {
@@ -154,6 +155,7 @@
 
   .socialLinks {
     top: 12.5rem;
+    bottom: unset;
   }
 }
 

@@ -1,5 +1,6 @@
 .cartPage {
   background-color: var(--bg-light);
+  padding-bottom: 7.5rem;
 }
 
 .cartCheckout {

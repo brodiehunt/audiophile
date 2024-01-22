@@ -1,6 +1,7 @@
 .companyInfo {
   padding: 0 1.5rem;
   margin-top: 6rem;
+  margin-bottom: 7.5rem;
 }
 
 .img {
@@ -57,6 +58,7 @@
     margin: 0 auto;
     max-width: 1110px;
     margin-top: 10rem;
+    margin-bottom: 7.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1.8rem;

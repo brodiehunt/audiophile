@@ -3,13 +3,15 @@
 import { IoCartOutline } from "react-icons/io5";
 import styles from "@/app/styles/nav.module.css";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import CartModal from "./cart/cartModal";
 import { usePathname } from "next/navigation";
+import CartContext from "../lib/cartContext";
 
 export default function Nav({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(true);
+  const { cart } = useContext(CartContext);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -63,6 +65,7 @@ export default function Nav({ children }) {
             setCartOpen(!cartOpen);
           }}
         >
+          {cart.length && <div className={styles.cartCount}>{cart.length}</div>}
           <IoCartOutline className={styles.svg} />
         </button>
         {cartOpen && <CartModal setCartOpen={setCartOpen} />}

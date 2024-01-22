@@ -32,6 +32,25 @@
   display: none;
 }
 
+.cartButton {
+  position: relative;
+}
+
+.cartCount {
+  color: var(--text-light);
+  position: absolute;
+  top: 0;
+  right: 80%;
+  transform: translateY(-90%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 @media (min-width: 768px) {
   .header {
     padding: 2.12rem 2.5rem;

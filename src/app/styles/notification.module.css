@@ -1,0 +1,34 @@
+.notification {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  /* background-color: var(--bg-light); */
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+  z-index: 3;
+}
+
+.productImg {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+}
+
+.productName {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  margin-bottom: 0.5rem;
+}
+
+.productQuantity {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}

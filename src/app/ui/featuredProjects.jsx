@@ -34,7 +34,10 @@ export default function FeaturedProjects() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </div>
-          <ButtonLink url="/product/1" theme="secondary2">
+          <ButtonLink
+            url="/product/65ac6fa8a0634fefe59b3270"
+            theme="secondary2"
+          >
             See product
           </ButtonLink>
         </div>
@@ -57,7 +60,7 @@ export default function FeaturedProjects() {
         </picture>
         <div className={styles.cardTwoContent}>
           <h2 className={styles.cardTwoTitle}>zx7 speaker</h2>
-          <ButtonLink url="/product/1" theme="secondary">
+          <ButtonLink url="/product/65ac6fa8a0634fefe59b327f" theme="secondary">
             See Product
           </ButtonLink>
         </div>
@@ -80,7 +83,7 @@ export default function FeaturedProjects() {
         </picture>
         <div className={styles.cardThreeContent}>
           <h2 className={styles.cardThreeTitle}>yx1 earphones</h2>
-          <ButtonLink url="/product/1" theme="secondary">
+          <ButtonLink url="/product/65ac6fa8a0634fefe59b3261" theme="secondary">
             See product
           </ButtonLink>
         </div>

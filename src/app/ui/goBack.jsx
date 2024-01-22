@@ -1,11 +1,14 @@
+"use client";
 import styles from "@/app/styles/goBack.module.css";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 export default function GoBack() {
+  const router = useRouter();
   return (
     <div className={styles.goBackContainer}>
-      <Link className={styles.goBackLink} href="/">
+      <button className={styles.goBackButton} onClick={() => router.back()}>
         Go Back
-      </Link>
+      </button>
     </div>
   );
 }

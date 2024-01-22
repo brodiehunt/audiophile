@@ -21,8 +21,8 @@ export async function fetchProductsByCategory(category) {
 }
 
 export async function fetchProductById(id) {
-  noStore();
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // noStore();
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   try {
     const res = await fetch(`http://localhost:3001/product/${id}`);
 
@@ -38,8 +38,8 @@ export async function fetchProductById(id) {
 }
 
 export async function fetchFeaturedProducts(id) {
-  noStore();
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // noStore();
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   try {
     const res = await fetch(
       `http://localhost:3001/product/random?excludeId=${id}`

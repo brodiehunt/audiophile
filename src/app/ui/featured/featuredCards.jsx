@@ -12,7 +12,7 @@ export default async function FeaturedCards({ productId }) {
       <div className={styles.featuredCardsContainer}>
         {featured.map((item, index) => {
           return (
-            <div className={styles.featuredCard}>
+            <div key={item._id} className={styles.featuredCard}>
               {/* <picture> */}
               {/* <source
                   srcSet={item.productImg.mobile}

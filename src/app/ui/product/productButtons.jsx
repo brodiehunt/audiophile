@@ -1,10 +1,12 @@
 "use client";
 import { useState, useContext } from "react";
+import CartContext from "@/app/lib/cartContext";
 import styles from "@/app/styles/product/product.module.css";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import LinkStyles from "@/app/styles/buttonLink.module.css";
-export default function ProductButtons() {
+export default function ProductButtons({ product }) {
   const [productCount, setProductCount] = useState(1);
+  const { store, dispatch } = useContext(CartContext);
 
   const incrementProduct = () => {
     setProductCount(productCount + 1);
@@ -16,8 +18,20 @@ export default function ProductButtons() {
   };
 
   const handleAddToCart = () => {
-    console.log("addding items to cart", productCount);
+    const item = {
+      _id: product._id,
+      abbreviation: product.abbreviation,
+      price: product.price,
+      cartImg: product.cartImg,
+      alt: product.alt,
+      quantity: productCount,
+    };
+    dispatch({
+      type: "add",
+      data: item,
+    });
   };
+
   return (
     <div className={styles.buttonsContainer}>
       <div className={styles.countContainer}>

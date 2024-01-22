@@ -57,6 +57,12 @@
 
   .cartButton {
     justify-self: right;
+    cursor: pointer;
+    transition: 0.2s ease-in all;
+  }
+
+  .cartButton:hover .svg {
+    color: var(--primary);
   }
 
   .nav {

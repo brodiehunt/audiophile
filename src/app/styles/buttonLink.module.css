@@ -1,6 +1,7 @@
 .primary {
   display: inline-block;
   text-decoration: none;
+  text-align: center;
   padding: 0.95rem 1.9rem;
   color: var(--text-light);
   background-color: var(--primary);
@@ -25,6 +26,7 @@
 .secondary {
   display: inline-block;
   text-decoration: none;
+  text-align: center;
   padding: 0.95rem 1.9rem;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -50,6 +52,7 @@
 .secondary2 {
   display: inline-block;
   text-decoration: none;
+  text-align: center;
   padding: 0.95rem 1.9rem;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -76,6 +79,7 @@
   align-items: center;
   gap: 0.85rem;
   text-decoration: none;
+  text-align: center;
   padding: 0.3rem 0.8rem;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.5);

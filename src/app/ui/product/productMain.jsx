@@ -28,7 +28,7 @@ export default async function ProductMain({ product }) {
         <p className={styles.productDescription}>{product?.description}</p>
         <div className={styles.productPrice}>{formatPrice(product.price)}</div>
         {/* This is where a client component will go to add cart */}
-        <ProductButtons />
+        <ProductButtons product={product} />
       </div>
     </div>
   );

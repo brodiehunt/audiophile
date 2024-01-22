@@ -3,16 +3,27 @@
 import { IoCartOutline } from "react-icons/io5";
 import styles from "@/app/styles/nav.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import CartModal from "./cart/cartModal";
+import { usePathname } from "next/navigation";
 
 export default function Nav({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(true);
+  const pathname = usePathname();
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setCartOpen(false);
+  }, [pathname]);
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            setCartOpen(false);
+            setMenuOpen(!menuOpen);
+          }}
           className={`${styles.headerButton} ${styles.hamburgerButton}`}
         >
           <img
@@ -45,9 +56,16 @@ export default function Nav({ children }) {
             </li>
           </ul>
         </nav>
-        <button className={`${styles.headerButton} ${styles.cartButton}`}>
+        <button
+          className={`${styles.headerButton} ${styles.cartButton}`}
+          onClick={() => {
+            setMenuOpen(false);
+            setCartOpen(!cartOpen);
+          }}
+        >
           <IoCartOutline className={styles.svg} />
         </button>
+        {cartOpen && <CartModal setCartOpen={setCartOpen} />}
         {menuOpen && children}
       </header>
     </div>

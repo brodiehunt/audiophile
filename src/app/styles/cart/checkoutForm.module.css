@@ -1,0 +1,113 @@
+.formGroup {
+  margin-bottom: 2rem;
+}
+
+.formGroupTitle {
+  color: var(--primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5625rem; /* 192.308% */
+  letter-spacing: 0.05806rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01338rem;
+}
+
+.formInput {
+  color: var(--text-dark);
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cfcfcf;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01563rem;
+}
+
+.formInput:focus {
+  outline-color: var(--primary);
+}
+
+.formInput::placeholder {
+  color: var(--text-dark);
+  opacity: 0.4;
+}
+
+/* RADIO Group */
+
+.radioGroup {
+  margin-bottom: 2rem;
+}
+
+.radioGroupLabel {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01338rem;
+}
+
+.radioInputGroup {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cfcfcf;
+  margin-bottom: 1rem;
+}
+
+.radioLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01563rem;
+}
+
+@media (min-width: 768px) {
+  .inputGroup {
+    margin-bottom: 0;
+  }
+
+  .formGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
+  .longGroup {
+    grid-column: 1/ 3;
+  }
+
+  .radioGroup {
+    margin-bottom: 1.5rem;
+  }
+
+  .fieldsetGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
+  .radioGroupLabel {
+    grid-row: 1/ 3;
+  }
+
+  .radioInputGroup {
+    margin-bottom: 0;
+  }
+}

@@ -2,22 +2,48 @@
 import styles from "@/app/styles/cart/cartPage.module.css";
 import buttonStyles from "@/app/styles/buttonLink.module.css";
 import GoBack from "../ui/goBack";
+import CheckoutForm from "../ui/cart/checkoutForm";
 import { calculateTotal } from "../lib/calculateTotal";
 import { formatPrice } from "../lib/formatPrice";
 import CartContext from "../lib/cartContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function Page() {
+  const initialState = {
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    zip: "",
+    city: "",
+    country: "",
+    eNumber: "",
+    ePin: "",
+  };
+  const [formState, setFormState] = useState(initialState);
   const { cart, dispatch } = useContext(CartContext);
   const cartTotal = calculateTotal(cart);
   const shipping = 5000;
   const calculateVat = cartTotal * 0.2;
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({ ...formState, [name]: value });
+  };
+
+  const submitForm = () => {
+    console.log("submit Form");
+  };
+
   return (
     <div className={styles.cartPage}>
       <GoBack />
       <div className={styles.cartCheckout}>
-        <div className={styles.checkoutFormContainer}></div>
+        <div className={styles.checkoutFormContainer}>
+          <h1 className={styles.checkoutTitle}>checkout</h1>
+          <CheckoutForm handleChange={handleChange} formState={formState} />
+        </div>
         <div className={styles.summaryContainer}>
           <h2 className={styles.summaryTitle}>Summary</h2>
           <div className={styles.cartItemsContainer}>
@@ -62,7 +88,9 @@ export default function Page() {
               {formatPrice(cartTotal + shipping)}
             </span>
           </div>
-          <button className={buttonStyles.primary}>Continue & pay</button>
+          <button onClick={submitForm} className={buttonStyles.primary}>
+            Continue & pay
+          </button>
         </div>
       </div>
     </div>

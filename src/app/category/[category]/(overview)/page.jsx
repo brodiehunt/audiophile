@@ -14,9 +14,10 @@ export function generateStaticParams() {
 export default async function Page({ params: { category } }) {
   console.log("category is:", category);
   const data = await fetchProductsByCategory(category);
+  console.log("data response", data);
   const products = data.data;
-
-  if (products.length === 0) {
+  console.log("products", data);
+  if (!products || products.length === 0) {
     notFound();
   }
 

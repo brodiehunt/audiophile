@@ -13,21 +13,11 @@ export default async function FeaturedCards({ productId }) {
         {featured.map((item, index) => {
           return (
             <div key={item._id} className={styles.featuredCard}>
-              {/* <picture> */}
-              {/* <source
-                  srcSet={item.productImg.mobile}
-                  media="(min-width: 1024px"
-                ></source>
-                <source
-                  srcSet={item.productImg.mobile}
-                  media="(min-width: 768px"
-                ></source> */}
               <img
                 src={item.productImg.mobile}
                 alt="fix later"
                 className={styles.cardImg}
               />
-              {/* </picture> */}
               <h3 className={styles.cardTitle}>{item.name}</h3>
               <div className={styles.buttonContainer}>
                 <ButtonLink url={`/product/${item._id}`} theme="primary">

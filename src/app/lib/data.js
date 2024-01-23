@@ -4,7 +4,7 @@ export async function fetchProductsByCategory(category) {
   // noStore();
   try {
     const res = await fetch(
-      `http://localhost:3001/product/category/${category}`
+      `${process.env.API_URL}/product/category/${category}`
     );
 
     if (!res.ok) {
@@ -24,7 +24,7 @@ export async function fetchProductById(id) {
   // noStore();
   // await new Promise((resolve) => setTimeout(resolve, 5000));
   try {
-    const res = await fetch(`http://localhost:3001/product/${id}`);
+    const res = await fetch(`${process.env.API_URL}/product/${id}`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -42,7 +42,7 @@ export async function fetchFeaturedProducts(id) {
   // await new Promise((resolve) => setTimeout(resolve, 3000));
   try {
     const res = await fetch(
-      `http://localhost:3001/product/random?excludeId=${id}`
+      `${process.env.API_URL}/product/random?excludeId=${id}`
     );
 
     if (!res.ok) {

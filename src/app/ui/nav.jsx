@@ -65,7 +65,9 @@ export default function Nav({ children }) {
             setCartOpen(!cartOpen);
           }}
         >
-          {cart.length && <div className={styles.cartCount}>{cart.length}</div>}
+          {cart.length > 0 && (
+            <div className={styles.cartCount}>{cart.length}</div>
+          )}
           <IoCartOutline className={styles.svg} />
         </button>
         {cartOpen && <CartModal setCartOpen={setCartOpen} />}

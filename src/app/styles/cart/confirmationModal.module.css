@@ -1,0 +1,166 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.confirmationContainer {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkContainer {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.checkIcon {
+  color: white;
+  width: 2rem;
+  height: 2rem;
+}
+
+.confirmationTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75rem; /* 116.667% */
+  letter-spacing: 0.05356rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.confirmationStatement {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+}
+
+.orderSummary {
+  overflow: hidden;
+  background-color: var(--bg-light);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.items {
+  padding: 1.5rem;
+}
+
+.firstItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.itemImg {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.itemName {
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  text-transform: uppercase;
+}
+
+.itemPrice {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
+.itemQuantity {
+  margin-left: auto;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
+.otherItems {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: normal;
+  font-weight: 700;
+  letter-spacing: -0.01338rem;
+  opacity: 0.5;
+}
+
+.grandTotal {
+  background-color: black;
+  padding: 1.5rem;
+}
+
+.grandTotalLabel {
+  color: white;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.grandTotalPrice {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .confirmationContainer {
+    width: 34rem;
+    padding: 3rem;
+  }
+
+  .checkContainer {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .confirmationTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    letter-spacing: 0.07144rem;
+    margin-bottom: 1.5rem;
+    max-width: 17rem;
+  }
+
+  .confirmationStatement {
+    margin-bottom: 2.1rem;
+  }
+
+  .orderSummary {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    margin-bottom: 2.8rem;
+  }
+}

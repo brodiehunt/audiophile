@@ -3,6 +3,7 @@ import styles from "@/app/styles/cart/cartPage.module.css";
 import buttonStyles from "@/app/styles/buttonLink.module.css";
 import GoBack from "../ui/goBack";
 import CheckoutForm from "../ui/cart/checkoutForm";
+import ConfirmationModal from "../ui/cart/confirmationModal";
 import { calculateTotal } from "../lib/calculateTotal";
 import { formatPrice } from "../lib/formatPrice";
 import CartContext from "../lib/cartContext";
@@ -25,6 +26,8 @@ export default function Page() {
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
   const { cart, dispatch } = useContext(CartContext);
+  const [confirmationOpen, setConfirmationOpen] = useState(false);
+
   const cartTotal = calculateTotal(cart);
   const shipping = 5000;
   const calculateVat = cartTotal * 0.2;
@@ -64,7 +67,10 @@ export default function Page() {
 
   const submitForm = () => {
     console.log("submit Form");
-
+    if (!cart.length) {
+      alert("Add Items to your cart!");
+      return;
+    }
     const newErrors = {};
     Object.keys(formState).forEach((key) => {
       if (validationFunctions[key]) {
@@ -82,11 +88,20 @@ export default function Page() {
       return;
     }
     // Open summary modal or take user to stripe;
+    setConfirmationOpen(true);
     console.log("Will be able to submit, success");
   };
 
   return (
     <div className={styles.cartPage}>
+      {confirmationOpen && (
+        <ConfirmationModal
+          cart={cart}
+          cartTotal={cartTotal}
+          dispatch={dispatch}
+          setConfirmationOpen={setConfirmationOpen}
+        />
+      )}
       <GoBack />
       <div className={styles.cartCheckout}>
         <div className={styles.checkoutFormContainer}>

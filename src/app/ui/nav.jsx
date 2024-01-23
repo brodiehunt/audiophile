@@ -10,7 +10,7 @@ import CartContext from "../lib/cartContext";
 
 export default function Nav({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(true);
+  const [cartOpen, setCartOpen] = useState(false);
   const { cart } = useContext(CartContext);
   const pathname = usePathname();
 

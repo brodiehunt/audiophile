@@ -1,6 +1,11 @@
 import styles from "@/app/styles/cart/checkoutForm.module.css";
 
-export default function CheckoutForm({ handleChange, formState }) {
+export default function CheckoutForm({
+  handleChange,
+  formState,
+  handleBlur,
+  errors,
+}) {
   return (
     <form>
       <h3 className={styles.formGroupTitle}>Billing details</h3>
@@ -11,14 +16,15 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="text"
             placeholder="John Doe"
             value={formState.name}
             name="name"
             id="name"
-            required
           />
+          {errors.name && <div className={styles.error}>{errors.name}</div>}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="email" className={styles.inputLabel}>
@@ -26,14 +32,15 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="email"
             placeholder="johndoe@email.com"
             value={formState.email}
             name="email"
             id="email"
-            required
           />
+          {errors.email && <div className={styles.error}>{errors.email}</div>}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="phone" className={styles.inputLabel}>
@@ -41,15 +48,15 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="tel"
             placeholder="+61401813482"
             value={formState.phone}
             name="phone"
             id="phone"
-            pattern="^(?:\+61|0)[4-5]\d{8}$"
-            required
           />
+          {errors.phone && <div className={styles.error}>{errors.phone}</div>}
         </div>
       </div>
       <h3 className={styles.formGroupTitle}>Shipping info</h3>
@@ -60,14 +67,17 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="text"
             placeholder="13 Sydney Street"
             value={formState.address}
             name="address"
             id="address"
-            required
           />
+          {errors.address && (
+            <div className={styles.error}>{errors.address}</div>
+          )}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="zip" className={styles.inputLabel}>
@@ -75,14 +85,15 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="text"
             placeholder="2233"
             value={formState.zip}
             name="zip"
             id="zip"
-            required
           />
+          {errors.zip && <div className={styles.error}>{errors.zip}</div>}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="city" className={styles.inputLabel}>
@@ -90,14 +101,15 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="text"
             placeholder="Sydney"
             value={formState.city}
             name="city"
             id="city"
-            required
           />
+          {errors.city && <div className={styles.error}>{errors.city}</div>}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="country" className={styles.inputLabel}>
@@ -105,14 +117,17 @@ export default function CheckoutForm({ handleChange, formState }) {
           </label>
           <input
             onChange={handleChange}
+            onBlur={handleBlur}
             className={styles.formInput}
             type="text"
             placeholder="Australia"
             value={formState.country}
             name="country"
             id="country"
-            required
           />
+          {errors.country && (
+            <div className={styles.error}>{errors.country}</div>
+          )}
         </div>
       </div>
       <h3 className={styles.formGroupTitle}>Payment details</h3>
@@ -122,10 +137,11 @@ export default function CheckoutForm({ handleChange, formState }) {
             <legend className={styles.radioGroupLabel}>Payment Method</legend>
             <div className={styles.radioInputGroup}>
               <input
+                onChange={handleChange}
                 className={styles.radioInput}
                 type="radio"
                 id="eMoney"
-                name="eMoney"
+                name="payment"
                 value="eMoney"
                 selected
               />
@@ -135,11 +151,13 @@ export default function CheckoutForm({ handleChange, formState }) {
             </div>
             <div className={styles.radioInputGroup}>
               <input
+                onChange={handleChange}
                 className={styles.radioInput}
                 type="radio"
                 id="cash"
-                name="cash"
+                name="payment"
                 value="cash"
+                defaultChecked
               />
               <label htmlFor="cash" className={styles.radioLabel}>
                 Cash on Delivery
@@ -147,36 +165,44 @@ export default function CheckoutForm({ handleChange, formState }) {
             </div>
           </div>
         </fieldset>
-        <div className={styles.inputGroup}>
-          <label htmlFor="eNumber" className={styles.inputLabel}>
-            e-Money Number
-          </label>
-          <input
-            onChange={handleChange}
-            className={styles.formInput}
-            type="Number"
-            placeholder="238521993"
-            value={formState.eNumber}
-            name="eNumber"
-            id="eNumber"
-            required
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="ePin" className={styles.inputLabel}>
-            e-Money PIN
-          </label>
-          <input
-            onChange={handleChange}
-            className={styles.formInput}
-            type="Number"
-            placeholder="6891"
-            value={formState.ePin}
-            name="ePin"
-            id="ePin"
-            required
-          />
-        </div>
+        {formState.payment === "eMoney" && (
+          <>
+            <div className={styles.inputGroup}>
+              <label htmlFor="eNumber" className={styles.inputLabel}>
+                e-Money Number
+              </label>
+              <input
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={styles.formInput}
+                type="number"
+                placeholder="238521993"
+                value={formState.eNumber}
+                name="eNumber"
+                id="eNumber"
+              />
+              {errors.eNumber && (
+                <div className={styles.error}>{errors.eNumber}</div>
+              )}
+            </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor="ePin" className={styles.inputLabel}>
+                e-Money PIN
+              </label>
+              <input
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={styles.formInput}
+                type="number"
+                placeholder="6891"
+                value={formState.ePin}
+                name="ePin"
+                id="ePin"
+              />
+              {errors.ePin && <div className={styles.error}>{errors.ePin}</div>}
+            </div>
+          </>
+        )}
       </div>
     </form>
   );

@@ -9,6 +9,7 @@
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
   z-index: 3;
+  background-color: white;
 }
 
 .productImg {

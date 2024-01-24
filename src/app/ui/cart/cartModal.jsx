@@ -1,15 +1,17 @@
 import styles from "@/app/styles/cart/cartModal.module.css";
 import CartContext from "../../lib/cartContext";
 import { useContext } from "react";
+import { useRouter } from "next/navigation";
 import ButtonLink from "../buttonLink";
+import buttonStyles from "@/app/styles/buttonLink.module.css";
 import CartItem from "./cartItem";
 import { calculateTotal } from "@/app/lib/calculateTotal";
 import { formatPrice } from "@/app/lib/formatPrice";
 
-export default function CartModal({ setCartOpen }) {
+export default function CartModal({ setCartOpen, toggleCart }) {
   const { cart, dispatch } = useContext(CartContext);
   const cartTotal = calculateTotal(cart);
-
+  const router = useRouter();
   // then use the format money function on this total.
 
   const removeAll = () => {
@@ -18,14 +20,13 @@ export default function CartModal({ setCartOpen }) {
     });
   };
 
+  const navigateToCheckout = () => {
+    toggleCart();
+    router.push("/cart");
+  };
+
   return (
-    <div
-      className={styles.cartModal}
-      onClick={() => {
-        document.body.style.overflow = "unset";
-        setCartOpen(false);
-      }}
-    >
+    <div className={styles.cartModal} onClick={toggleCart}>
       <div
         className={styles.cartContainer}
         onClick={(event) => event.stopPropagation()}
@@ -49,16 +50,9 @@ export default function CartModal({ setCartOpen }) {
           <span className={styles.totalLabel}>total</span>{" "}
           <span className={styles.total}>{formatPrice(cartTotal)}</span>
         </div>
-        <ButtonLink
-          onClick={() => {
-            document.body.style.overflow = "unset";
-            setCartOpen(false);
-          }}
-          url="/cart"
-          theme="primary"
-        >
+        <button className={buttonStyles.primary} onClick={navigateToCheckout}>
           Checkout
-        </ButtonLink>
+        </button>
       </div>
     </div>
   );

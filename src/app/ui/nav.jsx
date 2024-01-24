@@ -17,6 +17,7 @@ export default function Nav({ children }) {
   useEffect(() => {
     setMenuOpen(false);
     setCartOpen(false);
+    document.body.style.overflow = "unset";
   }, [pathname]);
 
   const toggleMenu = () => {
@@ -87,7 +88,9 @@ export default function Nav({ children }) {
           )}
           <IoCartOutline className={styles.svg} />
         </button>
-        {cartOpen && <CartModal setCartOpen={setCartOpen} />}
+        {cartOpen && (
+          <CartModal setCartOpen={setCartOpen} toggleCart={toggleCart} />
+        )}
         {menuOpen && children}
       </header>
     </div>

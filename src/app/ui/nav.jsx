@@ -18,14 +18,31 @@ export default function Nav({ children }) {
     setMenuOpen(false);
     setCartOpen(false);
   }, [pathname]);
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+    setCartOpen(false);
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleCart = () => {
+    if (cartOpen) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+    setMenuOpen(false);
+    setCartOpen(!cartOpen);
+  };
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <button
-          onClick={() => {
-            setCartOpen(false);
-            setMenuOpen(!menuOpen);
-          }}
+          onClick={toggleMenu}
           className={`${styles.headerButton} ${styles.hamburgerButton}`}
         >
           <img
@@ -33,7 +50,10 @@ export default function Nav({ children }) {
             alt="Open menu hamburger"
           />
         </button>
-        <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
+        <Link href="/">
+          <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
+        </Link>
+
         <nav className={styles.nav}>
           <ul className={styles.linkList}>
             <li>
@@ -60,10 +80,7 @@ export default function Nav({ children }) {
         </nav>
         <button
           className={`${styles.headerButton} ${styles.cartButton}`}
-          onClick={() => {
-            setMenuOpen(false);
-            setCartOpen(!cartOpen);
-          }}
+          onClick={toggleCart}
         >
           {cart.length > 0 && (
             <div className={styles.cartCount}>{cart.length}</div>

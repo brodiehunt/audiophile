@@ -1,22 +1,25 @@
 import styles from "@/app/styles/categoryCard.module.css";
-import ButtonLink from "./buttonLink";
+import buttonStyles from "@/app/styles/buttonLink.module.css";
+import Link from "next/link";
 import Image from "next/image";
-import currentImage from "../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function CategoryCard({ card }) {
   return (
-    <div className={styles.card}>
+    <Link href={card.url} className={styles.card}>
       <Image
         className={styles.img}
         src={card.thumbnail}
         alt="earphones category thumbnail"
       />
       <div className={styles.cardTitle}>{card.title}</div>
-      <ButtonLink url={card.url} theme="hollow">
+      {/* <ButtonLink url={card.url} theme="hollow">
         shop
         <IoIosArrowForward className={styles.svg} />
-      </ButtonLink>
-    </div>
+      </ButtonLink> */}
+      <div className={buttonStyles.hollow}>
+        shop <IoIosArrowForward className={styles.svg} />
+      </div>
+    </Link>
   );
 }

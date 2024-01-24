@@ -19,7 +19,13 @@ export default function CartModal({ setCartOpen }) {
   };
 
   return (
-    <div className={styles.cartModal} onClick={() => setCartOpen(false)}>
+    <div
+      className={styles.cartModal}
+      onClick={() => {
+        document.body.style.overflow = "unset";
+        setCartOpen(false);
+      }}
+    >
       <div
         className={styles.cartContainer}
         onClick={(event) => event.stopPropagation()}
@@ -44,7 +50,10 @@ export default function CartModal({ setCartOpen }) {
           <span className={styles.total}>{formatPrice(cartTotal)}</span>
         </div>
         <ButtonLink
-          onClick={() => setCartOpen(false)}
+          onClick={() => {
+            document.body.style.overflow = "unset";
+            setCartOpen(false);
+          }}
           url="/cart"
           theme="primary"
         >

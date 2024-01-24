@@ -6,9 +6,17 @@
   height: calc(100vh - 100%);
   width: 100%;
   z-index: 5;
+  overflow: scroll;
 }
 
 .categoryCardContainer {
   background-color: white;
   border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .categoryCardContainer {
+    padding: 4rem 0;
+  }
 }

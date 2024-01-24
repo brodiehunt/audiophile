@@ -22,6 +22,10 @@
   margin-bottom: 7.5rem;
 }
 
+.productCard:last-child {
+  margin-bottom: 0;
+}
+
 .imgContainer {
   margin-bottom: 2rem;
 }

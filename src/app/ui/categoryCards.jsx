@@ -17,7 +17,7 @@ const cardsInfo = [
   },
   {
     title: "earphones",
-    thumbnail: headphonesThumbnail,
+    thumbnail: earphonesThumbnail,
     url: "/category/earphones",
   },
 ];

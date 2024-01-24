@@ -1,6 +1,6 @@
 .secondaryNav {
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 0rem 1.5rem;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
 }
@@ -10,8 +10,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 0.7rem;
-    padding: 2.5rem;
-    padding-bottom: 4.2rem;
+    padding: 0 2.5rem;
+    /* padding-bottom: 4.2rem; */
   }
 }
 

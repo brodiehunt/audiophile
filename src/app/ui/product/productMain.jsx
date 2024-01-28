@@ -3,6 +3,7 @@ import ProductButtons from "./productButtons";
 import { formatName } from "@/app/lib/formatName";
 import { formatPrice } from "@/app/lib/formatPrice";
 export default async function ProductMain({ product }) {
+  console.log("Product", product);
   return (
     <div className={styles.productMainContainer}>
       <div className={styles.productImgContainer}>

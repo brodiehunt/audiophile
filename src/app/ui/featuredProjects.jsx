@@ -35,7 +35,7 @@ export default function FeaturedProjects() {
             truly remarkable sound.
           </div>
           <ButtonLink
-            url="/product/65af7115d6f8caf63ceef6bb"
+            url="/product/65b611445e87217de2de28d5"
             theme="secondary2"
           >
             See product
@@ -60,7 +60,7 @@ export default function FeaturedProjects() {
         </picture>
         <div className={styles.cardTwoContent}>
           <h2 className={styles.cardTwoTitle}>zx7 speaker</h2>
-          <ButtonLink url="/product/65af7115d6f8caf63ceef6ca" theme="secondary">
+          <ButtonLink url="/product/65b611445e87217de2de28e4" theme="secondary">
             See Product
           </ButtonLink>
         </div>
@@ -83,7 +83,7 @@ export default function FeaturedProjects() {
         </picture>
         <div className={styles.cardThreeContent}>
           <h2 className={styles.cardThreeTitle}>yx1 earphones</h2>
-          <ButtonLink url="/product/65af7115d6f8caf63ceef6ac" theme="secondary">
+          <ButtonLink url="/product/65b611445e87217de2de28c6" theme="secondary">
             See product
           </ButtonLink>
         </div>

@@ -27,7 +27,7 @@ export default function Hero() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <ButtonLink url="/product/65af7115d6f8caf63ceef69d" theme="primary">
+        <ButtonLink url="/product/65b611445e87217de2de28b7" theme="primary">
           see product
         </ButtonLink>
       </div>

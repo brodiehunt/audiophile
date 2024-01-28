@@ -9,6 +9,8 @@ import { formatPrice } from "../lib/formatPrice";
 import CartContext from "../lib/cartContext";
 import { useContext, useState } from "react";
 import { validationFunctions } from "../lib/validationFunctions";
+import getStripe from "@/app/lib/getStripe";
+import { useSearchParams } from "next/navigation";
 
 export default function Page() {
   const initialState = {
@@ -20,19 +22,33 @@ export default function Page() {
     city: "",
     country: "",
     payment: "cash",
-    eNumber: "",
-    ePin: "",
+    // eNumber: "",
+    // ePin: "",
   };
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
   const { cart, dispatch } = useContext(CartContext);
-  const [confirmationOpen, setConfirmationOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const success = searchParams.get("success");
+  const [confirmationOpen, setConfirmationOpen] = useState(success);
 
   const cartTotal = calculateTotal(cart);
   const shipping = 5000;
   const calculateVat = cartTotal * 0.2;
-  console.log(formState);
 
+  async function handleCheckout() {
+    const stripeItemDetails = cart.map((cartItem) => {
+      return { price: cartItem.price_Id, quantity: cartItem.quantity };
+    });
+    const stripe = await getStripe();
+    const { error } = await stripe.redirectToCheckout({
+      lineItems: stripeItemDetails,
+      mode: "payment",
+      successUrl: `${process.env.NEXT_PUBLIC_CLIENT_URL}/cart?success=true`,
+      cancelUrl: `${process.env.NEXT_PUBLIC_CLIENT_URL}/cart`,
+      customerEmail: formState.email,
+    });
+  }
   const handleChange = (event) => {
     const { name, value, type } = event.target;
     if (type === "radio") {
@@ -50,7 +66,6 @@ export default function Page() {
         });
       }
     }
-    console.log(name, value);
     setFormState({ ...formState, [name]: value });
   };
 
@@ -66,7 +81,6 @@ export default function Page() {
   };
 
   const submitForm = () => {
-    console.log("submit Form");
     if (!cart.length) {
       alert("Add Items to your cart!");
       return;
@@ -84,12 +98,10 @@ export default function Page() {
     // If there are any errors, prevent form from submitting
     const containsError = Object.keys(newErrors).find((key) => newErrors[key]);
     if (containsError) {
-      console.log("Cant submit, invalid fields");
       return;
     }
     // Open summary modal or take user to stripe;
-    setConfirmationOpen(true);
-    console.log("Will be able to submit, success");
+    handleCheckout();
   };
 
   return (

@@ -36,16 +36,16 @@ export default function ConfirmationModal({
             <div className={styles.firstItem}>
               <img
                 className={styles.itemImg}
-                src={cart[0].cartImg}
-                alt={cart[0].alt}
+                src={cart[0]?.cartImg}
+                alt={cart[0]?.alt}
               />
               <div className={styles.itemInfo}>
-                <div className={styles.itemName}>{cart[0].abbreviation}</div>
+                <div className={styles.itemName}>{cart[0]?.abbreviation}</div>
                 <div className={styles.itemPrice}>
-                  {formatPrice(cart[0].price)}
+                  {formatPrice(cart[0]?.price)}
                 </div>
               </div>
-              <div className={styles.itemQuantity}>x{cart[0].quantity}</div>
+              <div className={styles.itemQuantity}>x{cart[0]?.quantity}</div>
             </div>
             {numOtherItems > 1 && (
               <div className={styles.otherItems}>

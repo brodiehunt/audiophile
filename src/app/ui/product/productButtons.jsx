@@ -27,6 +27,7 @@ export default function ProductButtons({ product }) {
       cartImg: product.cartImg,
       alt: product.alt,
       quantity: productCount,
+      price_Id: product.price_Id,
     };
     activateNotification(product.abbreviation, product.cartImg, productCount);
     dispatch({
